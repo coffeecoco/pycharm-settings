@@ -57,7 +57,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/"
 
 #
 # Example aliases
