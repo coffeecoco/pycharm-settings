@@ -11,7 +11,10 @@ brew cask install skype
 brew cask install pycharm-ce
 brew install python3
 brew cask install sublime-text
+brew cask install spotify
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 # install gcloud SDK: /Applications
 curl https://sdk.cloud.google.com | bash
+source ~/.zshrc
+gcloud components install kubectl 
