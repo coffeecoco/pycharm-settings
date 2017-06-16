@@ -12,3 +12,6 @@ brew cask install pycharm-ce
 brew install python3
 brew cask install sublime-text
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+# install gcloud SDK: /Applications
+curl https://sdk.cloud.google.com | bash
