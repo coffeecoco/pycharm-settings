@@ -6,12 +6,16 @@ killall Finder
 
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+brew install python3
 brew cask install iterm2
 brew cask install skype
+brew cask install slack
 brew cask install pycharm-ce
-brew install python3
 brew cask install sublime-text
-brew cask install spotify
+brew cask install postman
+brew cask install psequel
+brew cask install docker
+
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 # install gcloud SDK: /Applications
