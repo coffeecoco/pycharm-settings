@@ -12,6 +12,14 @@ brew install python3
 # install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Require setting user.name and email per-repo:
+$ git config --global user.useConfigOnly true
+# Remove email address from global config:
+$ git config --global --unset-all user.email
+
+# Update Ruby
+\curl -sSL https://get.rvm.io | bash -s stable
+
 brew cask install iterm2
 brew cask install pycharm-ce
 brew cask install sublime-text
@@ -21,13 +29,18 @@ brew cask install docker
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
+# Require setting user.name and email per-repo:
+$ git config --global user.useConfigOnly true
+# Remove email address from global config:
+$ git config --global --unset-all user.email
+
 # install gcloud SDK: /Applications
 curl https://sdk.cloud.google.com | bash
 source ~/.zshrc
-gcloud components install kubectl 
+gcloud components install kubectl
 
 
-# OPTIONAL: 
+# OPTIONAL:
 # brew cask install sequel-pro
 #brew cask install spotify
 # brew cask install hipchat
