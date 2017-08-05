@@ -9,8 +9,14 @@ defaults write com.apple.finder AppleShowAllFiles YES
 killall Finder
 sudo spctl --master-disable
 
+# Update Ruby
+\curl -sSL https://get.rvm.io | bash -s stable
+
 # Development
 brew install python3
+brew install npm
+npm install -g @angular/cli
+
 # install ZSH
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -24,8 +30,6 @@ $ git config --global user.useConfigOnly true
 # Remove email address from global config:
 $ git config --global --unset-all user.email
 
-# Update Ruby
-\curl -sSL https://get.rvm.io | bash -s stable
 
 
 # intsall Dev Software
@@ -49,7 +53,7 @@ curl https://sdk.cloud.google.com | bash
 gcloud components install kubectl
 
 
-# OPTIONAL:
+# OTHER SOFTWARE
 # brew cask install sequel-pro
 brew cask install slack
 brew cask install skype
