@@ -12,7 +12,12 @@ sudo spctl --master-disable
 # Development
 brew install python3
 # install ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+brew cask install fish
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+
 
 # Require setting user.name and email per-repo:
 $ git config --global user.useConfigOnly true
@@ -32,13 +37,15 @@ brew cask install postman
 brew cask install psequel
 brew cask install docker
 
+# brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
+
 # Create symlink for the subl
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 # install gcloud SDK: /Applications
 curl https://sdk.cloud.google.com | bash
-source ~/.zshrc
+# source ~/.zshrc
 gcloud components install kubectl
 
 
