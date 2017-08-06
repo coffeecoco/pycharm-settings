@@ -40,6 +40,7 @@ brew cask install sublime-text
 brew cask install postman
 brew cask install psequel
 brew cask install docker
+brew cask install minikube
 
 # brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
 
