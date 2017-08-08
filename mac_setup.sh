@@ -18,11 +18,7 @@ brew install npm
 npm install -g @angular/cli
 
 # install ZSH
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-brew cask install fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 # Require setting user.name and email per-repo:
@@ -41,6 +37,11 @@ brew cask install postman
 brew cask install psequel
 brew cask install docker
 brew cask install minikube
+
+# xhybe virtualization driver for mac os
+brew install docker-machine-driver-xhyve
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
 # brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
 
