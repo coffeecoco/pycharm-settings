@@ -51,7 +51,9 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx autopep8 common-aliases kubectl)
+
+
+plugins=(git osx autopep8 common-aliases kubectl zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,6 +67,10 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR='subl -w'
 
-# for Google cloud SDK run the init script: ./google-cloud-sdk/install.sh
-# after gcloud k8s component is installed add: source <(kubectl completion zsh) - for k8s completion
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Applications/google-cloud-sdk/path.zsh.inc'; fi
 
+# The next line enables shell command completion for gcloud.
+if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then source '/Applications/google-cloud-sdk/completion.zsh.inc'; fi
+
+source <(kubectl completion zsh)
