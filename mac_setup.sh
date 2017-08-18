@@ -44,7 +44,7 @@ brew cask install minikube
 brew install docker-machine-driver-xhyve
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-
+minikube config set vm-driver xhyve
 # brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
 
 # Create symlink for the subl
