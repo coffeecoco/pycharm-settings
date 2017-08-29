@@ -28,8 +28,6 @@ $ git config --global user.useConfigOnly true
 # Remove email address from global config:
 $ git config --global --unset-all user.email
 
-
-
 # intsall Dev Software
 brew install python3
 brew cask install iterm2
