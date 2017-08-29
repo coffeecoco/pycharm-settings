@@ -26,10 +26,10 @@
   <action id="Diff.SelectedChange" />
   <action id="DuplicatesForm.SendToRight" />
   <action id="EditorDecreaseFontSize">
-    <keyboard-shortcut first-keystroke="meta equals" />
+    <keyboard-shortcut first-keystroke="meta minus" />
   </action>
   <action id="EditorIncreaseFontSize">
-    <keyboard-shortcut first-keystroke="meta minus" />
+    <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
