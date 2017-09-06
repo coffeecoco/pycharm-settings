@@ -1,0 +1,13 @@
+try:
+
+    from django.conf import settings
+    settings.configure()
+    print('lol')
+    if settings.PINAX_ROOT:
+        import sys
+        from os.path import join
+        sys.path.insert(0, join(settings.PINAX_ROOT, "apps"))
+        sys.path.insert(0, join(settings.PROJECT_ROOT, "apps"))
+
+except:
+    pass
