@@ -53,7 +53,7 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git osx autopep8 common-aliases kubectl zsh-autosuggestions)
+plugins=(git osx autopep8 common-aliases zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,6 +65,8 @@ export SSH_KEY_PATH="~/.ssh/"
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zk="zkubectl"
+alias k8="kubectl"
 export EDITOR='subl -w'
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -74,3 +76,15 @@ if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Applicati
 if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then source '/Applications/google-cloud-sdk/completion.zsh.inc'; fi
 
 source <(kubectl completion zsh)
+
+export PYTHONSTARTUP=~/.pythonrc
+
+bpython() {
+    if test -n "$VIRTUAL_ENV"
+    then
+        PYTHONPATH="$(python -c 'import sys; print(":".join(sys.path))')" \
+        command bpython "$@"
+    else
+        command bpython "$@"
+    fi
+}
