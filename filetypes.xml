@@ -9,6 +9,7 @@
       <mapping pattern="rebbit_dockerfile" type="PLAIN_TEXT" />
       <mapping ext="conf" type="PLAIN_TEXT" />
       <mapping ext="cvs" type="PLAIN_TEXT" />
+      <mapping ext="db" type="PLAIN_TEXT" />
       <mapping pattern="cloud_sql_proxy" type="ReST" />
       <mapping ext="sqlite" type="SQL" />
     </extensionMap>
