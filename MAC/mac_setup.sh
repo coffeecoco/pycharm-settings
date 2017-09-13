@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Install Xcode and CLI tools
+xcode-select --install
+
+# Update Ruby
+curl -sSL https://get.rvm.io | bash -s stable
+# Install Brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install ZSH
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+# add zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+cp .zshrc ~/
+
+source ~/.zshrc
+
 ## OS X settings
 # faster keyboard:
 defaults write NSGlobalDomain KeyRepeat -int 0
@@ -9,19 +26,11 @@ defaults write com.apple.finder AppleShowAllFiles YES
 killall Finder
 sudo spctl --master-disable
 
-# Update Ruby
-\curl -sSL https://get.rvm.io | bash -s stable
 
 # Development
 brew install python3
 brew install npm
 npm install -g @angular/cli
-
-# install ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# add zsh-autosuggestions
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 
 # Require setting user.name and email per-repo:
 $ git config --global user.useConfigOnly true
@@ -37,6 +46,7 @@ brew cask install postman
 brew cask install psequel
 brew cask install docker
 brew cask install minikube
+brew cask install google-chrome
 
 # xhybe virtualization driver for mac os
 brew install docker-machine-driver-xhyve
@@ -50,12 +60,18 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 # install gcloud SDK: /Applications
-curl https://sdk.cloud.google.com | bash
-# source ~/.zshrc
+curl https://sdk.cloud.google.com --install-dir=/Applications/ --disable-prompts | zsh
+source ~/.zshrc
 gcloud components install kubectl
 
 
-# OTHER SOFTWARE
-# brew cask install sequel-pro
-brew cask install slack
-brew cask install skype
+## App Store SOFTWARE
+brew install mas
+# LastPass
+mas install 926036361   
+# Spark
+mas install 1176895641
+# LightShot
+mas install 526298438
+
+

@@ -69,16 +69,8 @@ alias zk="zkubectl"
 alias k8="kubectl"
 export EDITOR='subl -w'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Applications/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then source '/Applications/google-cloud-sdk/completion.zsh.inc'; fi
-
 source <(kubectl completion zsh)
-
-export PYTHONSTARTUP=~/.pythonrc
-
+# use bpython of the virtual env if it is installed
 bpython() {
     if test -n "$VIRTUAL_ENV"
     then
