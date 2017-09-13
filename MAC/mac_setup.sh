@@ -52,6 +52,7 @@ brew cask install docker
 brew cask install minikube
 brew cask install google-chrome
 brew cask install alfred
+brew cask install clipy
 
 # xhybe virtualization driver for mac os
 brew install docker-machine-driver-xhyve
@@ -64,8 +65,8 @@ minikube config set vm-driver xhyve
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
-# install gcloud SDK: /Applications
-curl https://sdk.cloud.google.com --install-dir=/Applications/ --disable-prompts | zsh
+# install gcloud SDK: /Applications --install-dir=/Applications/ --disable-prompts
+curl https://sdk.cloud.google.com | zsh 
 source ~/.zshrc
 gcloud components install kubectl
 
@@ -78,6 +79,7 @@ mas install 926036361
 mas install 1176895641
 # LightShot
 mas install 526298438
-
+# Magnet
+mas install 441258766
 
 
