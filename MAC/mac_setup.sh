@@ -4,7 +4,7 @@
 xcode-select --install
 
 # Update Ruby
-curl -sSL https://get.rvm.io | bash -s stable
+\curl -sSL https://get.rvm.io | bash -s stable
 # Install Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -36,6 +36,10 @@ npm install -g @angular/cli
 $ git config --global user.useConfigOnly true
 # Remove email address from global config:
 $ git config --global --unset-all user.email
+\cp gitignore_global ~/.gitignore_global
+\cp gitconfig ~/.gitconfig
+git config --global core.excludesfile 'gitignore_global'
+
 
 # intsall Dev Software
 brew install python3
@@ -74,5 +78,6 @@ mas install 926036361
 mas install 1176895641
 # LightShot
 mas install 526298438
+
 
 
