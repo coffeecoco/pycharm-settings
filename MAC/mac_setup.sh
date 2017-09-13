@@ -47,6 +47,7 @@ brew cask install psequel
 brew cask install docker
 brew cask install minikube
 brew cask install google-chrome
+brew cask install alfred
 
 # xhybe virtualization driver for mac os
 brew install docker-machine-driver-xhyve
