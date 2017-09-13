@@ -59,4 +59,7 @@
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta alt left" />
   </action>
+  <action id="editRunConfigurations">
+    <keyboard-shortcut first-keystroke="ctrl meta c" />
+  </action>
 </keymap>
