@@ -20,10 +20,19 @@ source ~/.zshrc
 ## OS X settings
 # faster keyboard:
 defaults write NSGlobalDomain KeyRepeat -int 0
+# Repeat on hold
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Dock hide time
 defaults write com.apple.dock autohide-time-modifier -int 0
 # show all files
 defaults write com.apple.finder AppleShowAllFiles YES
+# for open/save dialogs
+defaults write -g AppleShowAllFiles -bool true
+# Copy Text from Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
 killall Finder
+killall Dock
 sudo spctl --master-disable
 
 
@@ -38,48 +47,23 @@ $ git config --global user.useConfigOnly true
 $ git config --global --unset-all user.email
 \cp gitignore_global ~/.gitignore_global
 \cp gitconfig ~/.gitconfig
-git config --global core.excludesfile 'gitignore_global'
+git config --global core.excludesfile ~/.gitignore_global
 
 
-# intsall Dev Software
-brew install python3
-brew cask install iterm2
-brew cask install pycharm
-brew cask install sublime-text
-brew cask install postman
-brew cask install psequel
-brew cask install docker
-brew cask install minikube
-brew cask install google-chrome
-brew cask install alfred
-brew cask install clipy
-
-# xhybe virtualization driver for mac os
-brew install docker-machine-driver-xhyve
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-minikube config set vm-driver xhyve
-# brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
-
-# Create symlink for the subl
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-
-# install gcloud SDK: /Applications --install-dir=/Applications/ --disable-prompts
-curl https://sdk.cloud.google.com | zsh 
+# install gcloud SDK: 
+export CLOUDSDK_CORE_DISABLE_PROMPTS=1 
+export CLOUDSDK_INSTALL_DIR=/Applications/
+curl https://sdk.cloud.google.com | zsh
 source ~/.zshrc
-gcloud components install kubectl
+gcloud --quiet components install kubectl
 
+# Experimental 
+# Disable/enable Dashboard:
+# http://hints.macworld.com/article.php?story=20050723123302403
 
-## App Store SOFTWARE
-brew install mas
-# LastPass
-mas install 926036361   
-# Spark
-mas install 1176895641
-# LightShot
-mas install 526298438
-# Magnet
-mas install 441258766
+defaults write com.apple.dashboard mcx-disabled -boolean YES
+defaults write com.apple.dashboard mcx-disabled -boolean NO
 
-
+#restart dock after it
+killall Dock
+#---------------------------------------------------------------------
