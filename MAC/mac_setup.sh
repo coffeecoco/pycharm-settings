@@ -19,7 +19,7 @@ source ~/.zshrc
 
 ## OS X settings
 # faster keyboard:
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 # Repeat on hold
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Dock hide time

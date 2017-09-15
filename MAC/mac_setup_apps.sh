@@ -11,6 +11,7 @@ brew cask install minikube
 brew cask install google-chrome
 brew cask install alfred
 brew cask install clipy
+brew cask install messenger
 
 # xhybe virtualization driver for mac os
 brew install docker-machine-driver-xhyve
