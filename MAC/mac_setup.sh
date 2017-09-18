@@ -1,61 +1,69 @@
 #!/bin/bash
 
-## OS X settings
-# faster keyboard:
-defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write com.apple.dock autohide-time-modifier -int 0
-# show all files
-defaults write com.apple.finder AppleShowAllFiles YES
-killall Finder
-sudo spctl --master-disable
+# Install Xcode and CLI tools
+xcode-select --install
 
 # Update Ruby
 \curl -sSL https://get.rvm.io | bash -s stable
+# Install Brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install ZSH
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+# add zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+cp .zshrc ~/
+
+source ~/.zshrc
+
+## OS X settings
+# faster keyboard:
+defaults write NSGlobalDomain KeyRepeat -int 1
+# Repeat on hold
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Dock hide time
+defaults write com.apple.dock autohide-time-modifier -int 0
+# show all files
+defaults write com.apple.finder AppleShowAllFiles YES
+# for open/save dialogs
+defaults write -g AppleShowAllFiles -bool true
+# Copy Text from Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+killall Finder
+killall Dock
+sudo spctl --master-disable
+
 
 # Development
 brew install python3
 brew install npm
 npm install -g @angular/cli
 
-# install ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# add zsh-autosuggestions
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-
 # Require setting user.name and email per-repo:
 $ git config --global user.useConfigOnly true
 # Remove email address from global config:
 $ git config --global --unset-all user.email
-
-# intsall Dev Software
-brew install python3
-brew cask install iterm2
-brew cask install pycharm
-brew cask install sublime-text
-brew cask install postman
-brew cask install psequel
-brew cask install docker
-brew cask install minikube
-
-# xhybe virtualization driver for mac os
-brew install docker-machine-driver-xhyve
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-minikube config set vm-driver xhyve
-# brew tap dbcli/tap && brew tap-pin dbcli/tap && brew install pgcli
-
-# Create symlink for the subl
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-
-# install gcloud SDK: /Applications
-curl https://sdk.cloud.google.com | bash
-# source ~/.zshrc
-gcloud components install kubectl
+\cp gitignore_global ~/.gitignore_global
+\cp gitconfig ~/.gitconfig
+git config --global core.excludesfile ~/.gitignore_global
 
 
-# OTHER SOFTWARE
-# brew cask install sequel-pro
-brew cask install slack
-brew cask install skype
+# install gcloud SDK: 
+export CLOUDSDK_CORE_DISABLE_PROMPTS=1 
+export CLOUDSDK_INSTALL_DIR=/Applications/
+curl https://sdk.cloud.google.com | zsh
+source ~/.zshrc
+gcloud --quiet components install kubectl
+
+# Experimental 
+# Disable/enable Dashboard:
+# http://hints.macworld.com/article.php?story=20050723123302403
+
+defaults write com.apple.dashboard mcx-disabled -boolean YES
+defaults write com.apple.dashboard mcx-disabled -boolean NO
+
+#restart dock after it
+killall Dock
+#---------------------------------------------------------------------
