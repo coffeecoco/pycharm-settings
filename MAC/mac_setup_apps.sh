@@ -9,6 +9,8 @@ brew cask install psequel
 brew cask install docker
 brew cask install minikube
 brew cask install google-chrome
+brew install kops
+# Other
 brew cask install alfred
 brew cask install clipy
 brew cask install messenger

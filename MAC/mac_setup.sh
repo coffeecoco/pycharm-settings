@@ -35,8 +35,8 @@ killall Finder
 killall Dock
 sudo spctl --master-disable
 
-
 # Development
+brew update
 brew install python3
 brew install npm
 npm install -g @angular/cli
@@ -49,12 +49,13 @@ $ git config --global --unset-all user.email
 \cp gitconfig ~/.gitconfig
 git config --global core.excludesfile ~/.gitignore_global
 
-
 # install gcloud SDK: 
 export CLOUDSDK_CORE_DISABLE_PROMPTS=1 
 export CLOUDSDK_INSTALL_DIR=/Applications/
 curl https://sdk.cloud.google.com | zsh
+
 source ~/.zshrc
+
 gcloud --quiet components install kubectl
 
 # Experimental 
@@ -62,7 +63,7 @@ gcloud --quiet components install kubectl
 # http://hints.macworld.com/article.php?story=20050723123302403
 
 defaults write com.apple.dashboard mcx-disabled -boolean YES
-defaults write com.apple.dashboard mcx-disabled -boolean NO
+#defaults write com.apple.dashboard mcx-disabled -boolean NO
 
 #restart dock after it
 killall Dock
