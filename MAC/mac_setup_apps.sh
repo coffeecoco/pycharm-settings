@@ -37,3 +37,9 @@ mas install 526298438
 # Magnet
 mas install 441258766
 
+
+# Add start on login
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Alfred 3",path:"/Applications/Alfred 3.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Magnet",path:"/Applications/Magnet.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Clipy",path:"/Applications/Clipy.app", hidden:false}'
+
