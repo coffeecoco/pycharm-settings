@@ -9,6 +9,8 @@ brew cask install psequel
 brew cask install docker
 brew cask install minikube
 brew cask install google-chrome
+brew install kops
+# Other
 brew cask install alfred
 brew cask install clipy
 brew cask install messenger
@@ -34,4 +36,10 @@ mas install 1176895641
 mas install 526298438
 # Magnet
 mas install 441258766
+
+
+# Add start on login
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Alfred 3",path:"/Applications/Alfred 3.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Magnet",path:"/Applications/Magnet.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Clipy",path:"/Applications/Clipy.app", hidden:false}'
 
