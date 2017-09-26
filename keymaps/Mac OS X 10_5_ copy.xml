@@ -72,6 +72,9 @@
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta alt left" />
   </action>
+  <action id="RunDashboard.Debug">
+    <keyboard-shortcut first-keystroke="shift ctrl meta d" />
+  </action>
   <action id="editRunConfigurations">
     <keyboard-shortcut first-keystroke="ctrl meta c" />
   </action>
