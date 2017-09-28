@@ -57,10 +57,9 @@ curl https://sdk.cloud.google.com | zsh
 source ~/.zshrc
 
 gcloud --quiet components install kubectl
-
-# Experimental 
-# Disable/enable Dashboard:
-# http://hints.macworld.com/article.php?story=20050723123302403
+# Add info about kubectl config in the zsh promt 
+brew tap superbrothers/zsh-kubectl-prompt git://github.com/superbrothers/zsh-kubectl-prompt.git
+brew install zsh-kubectl-prompt
 
 defaults write com.apple.dashboard mcx-disabled -boolean YES
 #defaults write com.apple.dashboard mcx-disabled -boolean NO

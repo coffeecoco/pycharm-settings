@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/Cellar/python3/3.6.2/Frameworks/Python.framework/Versions/3.6/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/zamai/.oh-my-zsh
@@ -50,27 +50,43 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 
+PIPENV_SHELL_COMPAT=1
 
-plugins=(git osx autopep8 common-aliases zsh-autosuggestions)
+eval "$(direnv hook zsh)"
+
+plugins=(git osx virtualenv autopep8 common-aliases zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-
-# ssh
+# SSH
 export SSH_KEY_PATH="~/.ssh/"
 
-#
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zk="zkubectl"
-alias k8="kubectl"
 export EDITOR='subl -w'
 
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
+alias zk="zkubectl"
+alias k8="kubectl"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Applications/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then source '/Applications/google-cloud-sdk/completion.zsh.inc'; fi
+
 source <(kubectl completion zsh)
-# use bpython of the virtual env if it is installed
+
+# kubernetes config info in the promt
+autoload -U colors; colors
+zstyle ':zsh-kubectl-prompt:' namespace false
+source /usr/local/opt/zsh-kubectl-prompt/etc/zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+
+
+export PYTHONSTARTUP=~/.pythonrc
 bpython() {
     if test -n "$VIRTUAL_ENV"
     then
@@ -80,8 +96,3 @@ bpython() {
         command bpython "$@"
     fi
 }
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/zamai/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/zamai/google-cloud-sdk/completion.zsh.inc'; fi
