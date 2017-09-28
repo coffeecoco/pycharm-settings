@@ -53,9 +53,7 @@ ZSH_THEME="bira"
 
 PIPENV_SHELL_COMPAT=1
 
-eval "$(direnv hook zsh)"
-
-plugins=(git osx virtualenv autopep8 common-aliases zsh-autosuggestions)
+plugins=(git osx autopep8 common-aliases zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,6 +67,7 @@ alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias zk="zkubectl"
 alias k8="kubectl"
+alias mkenv="python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
 
 
 # The next line updates PATH for the Google Cloud SDK.
