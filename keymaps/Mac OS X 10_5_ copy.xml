@@ -31,6 +31,12 @@
   </action>
   <action id="Diff.SelectedChange" />
   <action id="DuplicatesForm.SendToRight" />
+  <action id="EditorCloneCaretAbove">
+    <keyboard-shortcut first-keystroke="ctrl meta up" />
+  </action>
+  <action id="EditorCloneCaretBelow">
+    <keyboard-shortcut first-keystroke="ctrl meta down" />
+  </action>
   <action id="EditorDecreaseFontSize">
     <keyboard-shortcut first-keystroke="meta minus" />
   </action>
@@ -50,6 +56,7 @@
   </action>
   <action id="GotoChangedFile" />
   <action id="GotoClass" />
+  <action id="GotoRelated" />
   <action id="Images.Editor.ZoomIn">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
@@ -64,6 +71,9 @@
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta alt left" />
+  </action>
+  <action id="RunDashboard.Debug">
+    <keyboard-shortcut first-keystroke="shift ctrl meta d" />
   </action>
   <action id="editRunConfigurations">
     <keyboard-shortcut first-keystroke="ctrl meta c" />
