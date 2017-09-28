@@ -67,7 +67,7 @@ alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias zk="zkubectl"
 alias k8="kubectl"
-alias mkenv="python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
+alias mkenv="python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip setuptools && pip install -r requirements.txt"
 
 
 # The next line updates PATH for the Google Cloud SDK.
