@@ -67,9 +67,8 @@ alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias zk="zkubectl"
 alias k8="kubectl"
-alias gs="git status"
-alias pip-update="pip install -U $(pip freeze | awk '{split($0, a, "=="); print a[1]}')"
-
+alias mkenv="python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip setuptools && pip install -r requirements.txt"
+alias pip-update-all="pip install -U $(pip freeze | awk '{split($0, a, "=="); print a[1]}')"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then source '/Applications/google-cloud-sdk/path.zsh.inc'; fi
