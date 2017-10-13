@@ -4,7 +4,6 @@
     <extensionMap>
       <mapping pattern="Dockerfile_money" type="Docker file" />
       <mapping pattern=".gitignore_global" type="Git file" />
-      <mapping pattern=".env" type="PLAIN_TEXT" />
       <mapping pattern="csv" type="PLAIN_TEXT" />
       <mapping pattern="rebbit_dockerfil" type="PLAIN_TEXT" />
       <mapping pattern="rebbit_dockerfile" type="PLAIN_TEXT" />
