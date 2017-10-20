@@ -12,6 +12,7 @@
       <mapping pattern=".prod" type="PLAIN_TEXT" />
       <mapping pattern=".dev" type="PLAIN_TEXT" />
       <mapping pattern=".env-prod" type="PLAIN_TEXT" />
+      <mapping pattern="supervisord" type="PLAIN_TEXT" />
       <mapping pattern=".env.prod" type="PLAIN_TEXT" />
       <mapping pattern="transmission-daemon" type="PLAIN_TEXT" />
       <mapping pattern="crontab" type="PLAIN_TEXT" />
