@@ -8,17 +8,16 @@
       <mapping pattern="supervisord" type="PLAIN_TEXT" />
       <mapping pattern="rc" type="PLAIN_TEXT" />
       <mapping pattern="rebbit_dockerfil" type="PLAIN_TEXT" />
+      <mapping pattern=".env.staging" type="PLAIN_TEXT" />
       <mapping pattern="rebbit_dockerfile" type="PLAIN_TEXT" />
-      <mapping pattern="postgis-dokerfile" type="PLAIN_TEXT" />
       <mapping pattern=".prod" type="PLAIN_TEXT" />
       <mapping pattern=".dev" type="PLAIN_TEXT" />
       <mapping pattern=".env-prod" type="PLAIN_TEXT" />
       <mapping pattern=".env.prod" type="PLAIN_TEXT" />
       <mapping pattern="transmission-daemon" type="PLAIN_TEXT" />
       <mapping pattern="crontab" type="PLAIN_TEXT" />
-      <mapping pattern=".env.staging" type="PLAIN_TEXT" />
+      <mapping pattern="postgis-dokerfile" type="PLAIN_TEXT" />
       <mapping pattern=".env-dev" type="PLAIN_TEXT" />
-      <mapping ext="csv" type="PLAIN_TEXT" />
       <mapping ext="conf" type="PLAIN_TEXT" />
       <mapping ext="service" type="PLAIN_TEXT" />
       <mapping ext="lua" type="PLAIN_TEXT" />
