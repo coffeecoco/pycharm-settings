@@ -46,6 +46,9 @@
   <action id="EditorIncreaseFontSize">
     <keyboard-shortcut first-keystroke="meta equals" />
   </action>
+  <action id="EvaluateExpression">
+    <keyboard-shortcut first-keystroke="ctrl meta e" />
+  </action>
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
