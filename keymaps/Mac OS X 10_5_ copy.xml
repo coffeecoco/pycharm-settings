@@ -15,6 +15,9 @@
   <action id="ActivateVersionControlToolWindow">
     <keyboard-shortcut first-keystroke="meta 6" />
   </action>
+  <action id="AttachProject">
+    <keyboard-shortcut first-keystroke="shift meta o" />
+  </action>
   <action id="AutoIndentLines">
     <keyboard-shortcut first-keystroke="shift alt i" />
   </action>
@@ -43,6 +46,9 @@
   <action id="EditorIncreaseFontSize">
     <keyboard-shortcut first-keystroke="meta equals" />
   </action>
+  <action id="EvaluateExpression">
+    <keyboard-shortcut first-keystroke="ctrl meta e" />
+  </action>
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
@@ -56,6 +62,7 @@
   </action>
   <action id="GotoChangedFile" />
   <action id="GotoClass" />
+  <action id="GotoFile" />
   <action id="GotoRelated" />
   <action id="Images.Editor.ZoomIn">
     <keyboard-shortcut first-keystroke="meta add" />
@@ -66,16 +73,17 @@
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta alt right" />
   </action>
-  <action id="OpenFile">
-    <keyboard-shortcut first-keystroke="meta o" />
-  </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta alt left" />
+  </action>
+  <action id="RecentChanges" />
+  <action id="RecentProjectListGroup">
+    <keyboard-shortcut first-keystroke="meta o" />
   </action>
   <action id="RunDashboard.Debug">
     <keyboard-shortcut first-keystroke="shift ctrl meta d" />
   </action>
   <action id="editRunConfigurations">
-    <keyboard-shortcut first-keystroke="ctrl meta c" />
+    <keyboard-shortcut first-keystroke="shift alt c" />
   </action>
 </keymap>
